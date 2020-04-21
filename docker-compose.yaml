@@ -1,0 +1,53 @@
+version: '3.7'
+
+services:
+  web:
+    build: ./src
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./src/:/usr/src/app/
+    expose:
+      - 8000
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=d(qwiu^&e8hfduq@!^#!wjhqduqwe^!@&*(#!@jahu
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 192.168.148.129 [::1]
+      - SQL_ENGINE=django.db.backends.postgresql
+      - SQL_DATABASE=library_demo
+      - SQL_USER=root
+      - SQL_PASSWORD=123456
+      - SQL_HOST=db
+      - SQL_PORT=5432
+      - EMAIL_HOST=
+      - EMAIL_PORT=
+      - EMAIL_HOST_USER=
+      - EMAIL_HOST_PASSWORD=
+      - EMAIL_FROM=
+
+  db:
+    image: postgres:12.2-alpine
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
+    environment:
+      - TZ=Asia/Shanghai
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=library_demo
+    ports:
+      - 5432:5432
+    restart: always
+
+  nginx:
+    build: ./docker/nginx
+    ports:
+      - 80:80
+    volumes:
+      - static_volume:/usr/src/app/static_cdn
+      - media_volume:/usr/src/app/media_cdn
+    depends_on:
+      - web
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
