@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+ {% block head %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">  
+  {% endblock head %}
+{% block content %}
+<div class="login-form">
+{% if not request.user.is_authenticated %}
+  <form method="post">
+  <h2>Sign up</h2>
+    {% csrf_token %}
+    {{form | crispy}}
+    <div class="login-social">
+  <button type="submit" class="btn btn-primary">Sign up</button>
+  </div>
+  </form>
+
+  {% else %}
+  You are already signed in, <a href="{% url 'logout' %}">Sign-out ?</a>
+  {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+  {% block head %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">  
+  {% endblock head %}
+    {% block content %}
+    <div class="login-form login-box">
+    {% if request.user.is_authenticated %}
+    <div class="login-form login-social">
+    You are already signed in, <a href="{% url 'logout' %}">Sign-out ?</a>
+    </div>
+    {% else %}
+
+    <form method="post">{% csrf_token %}
+    <h2>Log in</h2>
+      {{form | crispy}}
+      <div>
+        <button type="submit" class="btn btn-primary">Log in</button>
+        <a href="{% url 'signup' %}" class="float-right btn btn-default">Sign up</a>
+      </div>
+      <hr>
+    </form>
+      <div class='login-form login-social'>
+        <a href="{% url 'social:begin' 'github' %}" class="btn btn-dark github-btn ">Login with GitHub <i
+            class="fab fa-github"></i></a>
+        <a href="{% url 'social:begin' 'gitlab' %}" class="btn" style="background-color:#f16b2c; color:white;">Login
+          with GitLab <i class="fab fa-gitlab"></i></a>
+      </div>
+    {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+  {% block head %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">  
+  {% endblock head %}
+
+{% block content %}
+    <div class="login-form login-social confirm-msg">
+  The confirmation link was invalid, possibly because it has already been used.
+  </div>
+{% endblock %}

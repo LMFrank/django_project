@@ -3,9 +3,11 @@ version: '3.7'
 services:
   web:
     build: ./src
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn src.wsgi -b 0.0.0.0:8000 --reload
     volumes:
-      - ./src/:/usr/src/app/
+      - ./src:/usr/src/app
+      - static_volume:/usr/src/static_cdn
+      - media_volume:/usr/src/media_cdn
     expose:
       - 8000
     environment:
@@ -18,11 +20,14 @@ services:
       - SQL_PASSWORD=123456
       - SQL_HOST=db
       - SQL_PORT=5432
-      - EMAIL_HOST=
-      - EMAIL_PORT=
-      - EMAIL_HOST_USER=
-      - EMAIL_HOST_PASSWORD=
-      - EMAIL_FROM=
+      - EMAIL_HOST='smtp.163.com'
+      - EMAIL_PORT=25
+      - EMAIL_HOST_USER='goblintechtest@163.com'
+      - EMAIL_HOST_PASSWORD='smart123'
+      - EMAIL_FROM='library<goblintechtest@163.com>'
+      - TZ=Asia/Shanghai
+    depends_on:
+      - db
 
   db:
     image: postgres:12.2-alpine
@@ -38,9 +43,11 @@ services:
     restart: always
 
   nginx:
-    build: ./docker/nginx
+    build: ./nginx
     ports:
       - 80:80
+    environment:
+      - TZ=Asia/Shanghai
     volumes:
       - static_volume:/usr/src/app/static_cdn
       - media_volume:/usr/src/app/media_cdn
