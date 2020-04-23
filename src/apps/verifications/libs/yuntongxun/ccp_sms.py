@@ -7,13 +7,13 @@
 from verifications.libs.yuntongxun.CCPRestSDK import REST
 
 # 说明：主账号，登陆云通讯网站后，可在"控制台-应用"中看到开发者主账号ACCOUNT SID
-_accountSid = '8aaf070862181ad5016236f3bcc811d5'
+_accountSid = ''
 
 # 说明：主账号Token，登陆云通讯网站后，可在控制台-应用中看到开发者主账号AUTH TOKEN
-_accountToken = '4e831592bd464663b0de944df13f16ef'
+_accountToken = ''
 
 # 请使用管理控制台首页的APPID或自己创建应用的APPID
-_appId = '8aaf070868747811016883f12ef3062c'
+_appId = ''
 
 # 说明：请求地址，生产环境配置成app.cloopen.com
 _serverIP = 'sandboxapp.cloopen.com'
@@ -88,7 +88,5 @@ class CCP(object):
 
 if __name__ == '__main__':
     # 注意：测试的短信模板编号为1
-    # send_template_sms('17600992168', ['111111', 5], 1)
-
     # 必须先使用CCP()初始化单例，才能够调用发送短信验证码的单例方法
-    CCP().send_template_sms('17600992168', ['111111', 5], 1)
+    CCP().send_template_sms('', ['111111', 5], 1)
