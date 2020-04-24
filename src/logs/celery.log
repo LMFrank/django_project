@@ -1,0 +1,55 @@
+[2020-04-23 23:01:40,034: INFO/MainProcess] Connected to redis://192.168.148.129:6379/5
+[2020-04-23 23:01:40,042: INFO/MainProcess] mingle: searching for neighbors
+[2020-04-23 23:01:41,064: INFO/MainProcess] mingle: all alone
+[2020-04-23 23:01:41,083: WARNING/MainProcess] /usr/local/lib/python3.8/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+[2020-04-23 23:01:41,083: INFO/MainProcess] celery@d38a0549c132 ready.
+[2020-04-24 01:01:03,500: INFO/MainProcess] Received task: ccp_send_sms_code[a2065e6f-e066-4464-a68c-213a2ab89d6b]  
+[2020-04-24 01:01:08,867: WARNING/ForkPoolWorker-2] {'statusCode': '000000', 'templateSMS': {'smsMessageSid': '4d615349c9fc48e78969ac08f87f1f7e', 'dateCreated': '20200424010103'}}
+[2020-04-24 01:01:08,873: INFO/ForkPoolWorker-2] Task ccp_send_sms_code[a2065e6f-e066-4464-a68c-213a2ab89d6b] succeeded in 5.364808034995804s: 0
+[2020-04-24 01:02:28,043: INFO/MainProcess] Received task: ccp_send_sms_code[0249de94-6218-4c78-895e-69ba71f32181]  
+[2020-04-24 01:02:33,726: WARNING/ForkPoolWorker-2] {'statusCode': '000000', 'templateSMS': {'smsMessageSid': '5d363eb74fd5461081fc39fc738a5e75', 'dateCreated': '20200424010228'}}
+[2020-04-24 01:02:33,728: INFO/ForkPoolWorker-2] Task ccp_send_sms_code[0249de94-6218-4c78-895e-69ba71f32181] succeeded in 5.682896103004168s: 0
+[2020-04-24 01:04:12,114: INFO/MainProcess] Received task: ccp_send_sms_code[bb07f004-5fd1-4bc0-a13d-fbc608548abc]  
+[2020-04-24 01:04:17,295: WARNING/ForkPoolWorker-2] {'statusCode': '000000', 'templateSMS': {'smsMessageSid': '2fb05088508148e892c274265c617c7e', 'dateCreated': '20200424010412'}}
+[2020-04-24 01:04:17,307: INFO/ForkPoolWorker-2] Task ccp_send_sms_code[bb07f004-5fd1-4bc0-a13d-fbc608548abc] succeeded in 5.191013761002978s: 0
+[2020-04-24 01:48:04,735: INFO/MainProcess] Connected to redis://192.168.148.129:6379/5
+[2020-04-24 01:48:04,761: INFO/MainProcess] mingle: searching for neighbors
+[2020-04-24 01:48:05,782: INFO/MainProcess] mingle: all alone
+[2020-04-24 01:48:05,797: WARNING/MainProcess] /usr/local/lib/python3.8/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+[2020-04-24 01:48:05,798: INFO/MainProcess] celery@09e175bc759f ready.
+[2020-04-24 01:50:59,425: INFO/MainProcess] Events of group {task} enabled by remote.
+[2020-04-24 01:51:26,894: INFO/MainProcess] Received task: ccp_send_sms_code[2649c337-8403-4a2f-ba8c-51fe7fc870d2]  
+[2020-04-24 01:51:32,123: WARNING/ForkPoolWorker-2] {'statusCode': '000000', 'templateSMS': {'smsMessageSid': '05230657eee6453d858837a320ef668a', 'dateCreated': '20200424015127'}}
+[2020-04-24 01:51:32,126: INFO/ForkPoolWorker-2] Task ccp_send_sms_code[2649c337-8403-4a2f-ba8c-51fe7fc870d2] succeeded in 5.228901943999517s: 0
+[2020-04-24 18:25:22,923: INFO/MainProcess] Connected to redis://192.168.148.129:6379/5
+[2020-04-24 18:25:22,932: INFO/MainProcess] mingle: searching for neighbors
+[2020-04-24 18:25:23,953: INFO/MainProcess] mingle: all alone
+[2020-04-24 18:25:23,970: WARNING/MainProcess] /usr/local/lib/python3.8/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+[2020-04-24 18:25:23,970: INFO/MainProcess] celery@ae24d50e245b ready.
+[2020-04-24 18:25:24,392: INFO/MainProcess] Received task: send_sms_code[a895a1de-105a-4980-a466-c1e60cd06a9a]  
+[2020-04-24 18:25:24,400: INFO/MainProcess] Received task: send_sms_code[35beb7d8-18e5-43e3-8e78-da0f58410e6b]  
+[2020-04-24 18:25:28,613: INFO/MainProcess] Events of group {task} enabled by remote.
+[2020-04-24 18:25:29,624: WARNING/ForkPoolWorker-1] {'statusCode': '000000', 'templateSMS': {'smsMessageSid': '93cfd4d9b6f842c9bf702959c7e08291', 'dateCreated': '20200424182524'}}
+[2020-04-24 18:25:29,625: INFO/ForkPoolWorker-1] 发送短信验证码[正常][mobile: 15850530699]
+[2020-04-24 18:25:29,627: INFO/ForkPoolWorker-1] Task send_sms_code[35beb7d8-18e5-43e3-8e78-da0f58410e6b] succeeded in 5.225187777003157s: None
+[2020-04-24 18:25:29,654: WARNING/ForkPoolWorker-2] {'statusCode': '160038', 'statusMsg': '短信验证码发送过频繁'}
+[2020-04-24 18:25:29,655: WARNING/ForkPoolWorker-2] 发送短信验证码[失败][mobile: 15850530699]
+[2020-04-24 18:25:29,658: INFO/ForkPoolWorker-2] Task send_sms_code[a895a1de-105a-4980-a466-c1e60cd06a9a] succeeded in 5.265111400003661s: None
+[2020-04-24 23:07:16,662: INFO/MainProcess] Received task: send_sms_code[4358485d-950a-43fb-99ef-bcb18cee2784]  
+[2020-04-24 23:07:22,004: WARNING/ForkPoolWorker-2] {'statusCode': '000000', 'statusMsg': '短信验证码发送过频繁', 'templateSMS': {'smsMessageSid': 'e4673e0c7c7d453fabea88ba0378a9a7', 'dateCreated': '20200424230717'}}
+[2020-04-24 23:07:22,004: INFO/ForkPoolWorker-2] 发送短信验证码[正常][mobile: 15850530699]
+[2020-04-24 23:07:22,008: INFO/ForkPoolWorker-2] Task send_sms_code[4358485d-950a-43fb-99ef-bcb18cee2784] succeeded in 5.330208564992063s: None
+[2020-04-24 23:09:47,758: INFO/MainProcess] Received task: send_sms_code[e0c893fe-17fa-4429-9c2b-3e54bc204069]  
+[2020-04-24 23:09:52,962: WARNING/ForkPoolWorker-2] {'statusCode': '000000', 'statusMsg': '短信验证码发送过频繁', 'templateSMS': {'smsMessageSid': 'cededd006fae4287b18c736b9fea9095', 'dateCreated': '20200424230947'}}
+[2020-04-24 23:09:52,962: INFO/ForkPoolWorker-2] 发送短信验证码[正常][mobile: 15850530699]
+[2020-04-24 23:09:52,963: INFO/ForkPoolWorker-2] Task send_sms_code[e0c893fe-17fa-4429-9c2b-3e54bc204069] succeeded in 5.199426849998417s: None
+[2020-04-24 23:10:47,964: INFO/MainProcess] Received task: send_sms_code[2f96dcc7-cd78-4819-a4c2-d8510f1a29ca]  
+[2020-04-24 23:10:53,179: WARNING/ForkPoolWorker-2] {'statusCode': '000000', 'statusMsg': '短信验证码发送过频繁', 'templateSMS': {'smsMessageSid': 'baa32abfc92d4c2ea30001ab4fdef005', 'dateCreated': '20200424231048'}}
+[2020-04-24 23:10:53,180: INFO/ForkPoolWorker-2] 发送短信验证码[正常][mobile: 15850530699]
+[2020-04-24 23:10:53,181: INFO/ForkPoolWorker-2] Task send_sms_code[2f96dcc7-cd78-4819-a4c2-d8510f1a29ca] succeeded in 5.215198883990524s: None

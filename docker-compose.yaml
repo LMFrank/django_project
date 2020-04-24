@@ -53,11 +53,11 @@ services:
       - SQL_PASSWORD=123456
       - SQL_HOST=db
       - SQL_PORT=3306
-      - EMAIL_HOST='smtp.163.com'
+      - EMAIL_HOST=
       - EMAIL_PORT=25
-      - EMAIL_HOST_USER='goblintechtest@163.com'
-      - EMAIL_HOST_PASSWORD='smart123'
-      - EMAIL_FROM='library<goblintechtest@163.com>'
+      - EMAIL_HOST_USER=
+      - EMAIL_HOST_PASSWORD=
+      - EMAIL_FROM=
       - CELERY_BROKER=redis://192.168.148.129:6379/5
       - CELERY_BACKEND=redis://192.168.148.129:6379/6
       - TZ=Asia/Shanghai
@@ -75,21 +75,25 @@ services:
       - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 192.168.148.129 [::1]
       - CELERY_BROKER=redis://192.168.148.129:6379/5
       - CELERY_BACKEND=redis://192.168.148.129:6379/6
+      - TZ=Asia/Shanghai
     depends_on:
       - web
       - redis
 
   dashboard:
     build: ./src
-    command: flower -A library --port=5555 --broker=redis://192.168.148.129:6379/5
+    volumes:
+      - ./src:/usr/src/app
+    command: flower -A celery_tasks.main --port=5555 --broker=redis://192.168.148.129:6379/5
     ports:
       - 5555:5555
     environment:
       - DEBUG=1
-      - SECRET_KEY=sahu@!id&@^!ohqwu_asdasd&^!
+      - SECRET_KEY=n!4t(1329vc_i!-(bxd5v$w=q(8r(07svi5ku6f@+8r&hw2t89
       - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 192.168.148.129 [::1]
       - CELERY_BROKER=redis://192.168.148.129:6379/5
       - CELERY_BACKEND=redis://192.168.148.129:6379/6
+      - TZ=Asia/Shanghai
     depends_on:
       - web
       - celery
