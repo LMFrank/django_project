@@ -3,7 +3,7 @@ pymysql==0.9.3
 mysqlclient==1.4.6
 gunicorn==20.0.4
 requests==2.23.0
-Pillow==7.1.1
+Pillow==8.2.0
 PyJWT==1.7.1
 django-cors-headers==3.2.1
 django-crispy-forms==1.9
