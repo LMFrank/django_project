@@ -1,0 +1,44 @@
+卷 DATA 的文件夹 PATH 列表
+卷序列号为 60C1-DB42
+D:.
+│  Dockerfile
+│  entrypoint.sh
+│  manage.py
+│  pytest.ini
+│  requirements.txt
+│  tree.txt
+│  
+├─celery_tasks
+│      apps.py
+│      sample_tasks.py
+│      urls.py
+│      views.py
+│      __init__.py
+│      
+├─django_celery
+│      asgi.py
+│      celery.py
+│      settings.py
+│      urls.py
+│      wsgi.py
+│      __init__.py
+│      
+├─logs
+│      celery.log
+│      
+├─static
+│  ├─css
+│  │      bulma.min.css
+│  │      main.css
+│  │      
+│  └─js
+│          jquery-3.4.1.min.js
+│          main.js
+│          
+├─templates
+│      index.html
+│      
+└─tests
+        test_tasks.py
+        __init__.py
+        

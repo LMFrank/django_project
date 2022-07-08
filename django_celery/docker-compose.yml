@@ -1,0 +1,64 @@
+version: '3.7'
+
+services:
+  web:
+    build: ./django_celery
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./django_celery/:/usr/src/app/
+    ports:
+      - 8002:8000
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=sahu@!id&@^!ohqwu_asdasd&^!
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 192.168.148.129 [::1]
+      - CELERY_BROKER=redis://192.168.148.129:6379/0
+      - CELERY_BACKEND=redis://192.168.148.129:6379/1
+    depends_on:
+      - redis
+
+  celery:
+    build: ./django_celery
+    command: celery worker --app=django_celery --loglevel=info --logfile=logs/celery.log
+    volumes:
+      - ./django_celery:/usr/src/app
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=sahu@!id&@^!ohqwu_asdasd&^!
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 192.168.148.129 [::1]
+      - CELERY_BROKER=redis://192.168.148.129:6379/0
+      - CELERY_BACKEND=redis://192.168.148.129:6379/1
+    depends_on:
+      - web
+      - redis
+
+  dashboard:
+    build: ./django_celery
+    command: flower -A django_celery --port=5555 --broker=redis://192.168.148.129:6379/0
+    ports:
+      - 5555:5555
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=sahu@!id&@^!ohqwu_asdasd&^!
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 192.168.148.129 [::1]
+      - CELERY_BROKER=redis://192.168.148.129:6379/0
+      - CELERY_BACKEND=redis://192.168.148.129:6379/1
+    depends_on:
+      - web
+      - celery
+      - redis
+
+  redis:
+    image: redis:5.0
+    container_name: redis_django
+    network_mode: bridge
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis.conf:/etc/redis/redis.conf
+      - ./data:/data
+    command:
+      redis-server /etc/redis/redis.conf

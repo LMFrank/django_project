@@ -1,0 +1,10 @@
+[2020-04-15 01:21:06,552: INFO/MainProcess] Received task: celery_tasks.sample_tasks.create_task[cb76329d-21f5-4ba5-8710-1dd40d2ebb9b]  
+[2020-04-15 01:21:07,052: INFO/MainProcess] Received task: celery_tasks.sample_tasks.create_task[d8e8dee5-c6c2-4bdb-b328-f89367c6c236]  
+[2020-04-15 01:21:07,603: INFO/MainProcess] Received task: celery_tasks.sample_tasks.create_task[b8604b09-5702-463c-8c92-586bb135e6d8]  
+[2020-04-15 01:21:09,269: INFO/MainProcess] Received task: celery_tasks.sample_tasks.create_task[6155e2a3-3646-44a5-a1a9-622c977da9a6]  
+[2020-04-15 01:21:10,161: INFO/MainProcess] Received task: celery_tasks.sample_tasks.create_task[ebf73270-09b3-4396-8b5f-dd84c8d17e92]  
+[2020-04-15 01:21:27,062: INFO/ForkPoolWorker-1] Task celery_tasks.sample_tasks.create_task[d8e8dee5-c6c2-4bdb-b328-f89367c6c236] succeeded in 20.008525710029062s: 20
+[2020-04-15 01:21:36,586: INFO/ForkPoolWorker-2] Task celery_tasks.sample_tasks.create_task[cb76329d-21f5-4ba5-8710-1dd40d2ebb9b] succeeded in 30.031845328980125s: 30
+[2020-04-15 01:21:37,078: INFO/ForkPoolWorker-1] Task celery_tasks.sample_tasks.create_task[b8604b09-5702-463c-8c92-586bb135e6d8] succeeded in 10.012349575990811s: 10
+[2020-04-15 01:21:56,609: INFO/ForkPoolWorker-2] Task celery_tasks.sample_tasks.create_task[6155e2a3-3646-44a5-a1a9-622c977da9a6] succeeded in 20.01841182395583s: 20
+[2020-04-15 01:22:07,112: INFO/ForkPoolWorker-1] Task celery_tasks.sample_tasks.create_task[ebf73270-09b3-4396-8b5f-dd84c8d17e92] succeeded in 30.029392776021268s: 30
