@@ -9,7 +9,7 @@ django-cors-headers==3.2.1
 django-crispy-forms==1.9
 djangorestframework==3.11.0
 itsdangerous==1.1.0
-flower==0.9.4
+flower==1.2.0
 redis==3.4.1
 celery==4.4.2
 django-redis==4.11.0
