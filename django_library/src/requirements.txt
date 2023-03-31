@@ -10,7 +10,7 @@ django-crispy-forms==1.9
 djangorestframework==3.11.0
 itsdangerous==1.1.0
 flower==0.9.4
-redis==3.4.1
+redis==4.4.4
 celery==4.4.2
 django-redis==4.11.0
 djangorestframework-jwt==1.11.0
